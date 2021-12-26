@@ -42,3 +42,34 @@ Route::group(['prefix' => 'pengguna', 'middleware' => ['auth', 'role:pengguna']]
         return 'halaman profile pengguna';
     });
 });
+
+Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
+    Route::get('sewa', function () {
+        return view('sewa.index');
+    })->middleware(['role:admin|pengguna']);
+
+    Route::get('cek', function () {
+        return view('cek.index');
+    })->middleware(['role:admin']);
+
+    Route::get('edit', function () {
+        return view('edit.index');
+    })->middleware(['role:admin']);
+
+    Route::get('kembali', function () {
+        return view('kembali.index');
+    })->middleware(['role:admin']);
+
+    Route::get('laporan', function () {
+        return view('laporan.index');
+    })->middleware(['role:admin']);
+
+    Route::get('stock', function () {
+        return view('stock.index');
+    })->middleware(['role:admin']);
+
+    Route::get('update', function () {
+        return view('update.index');
+    })->middleware(['role:admin']);
+
+});

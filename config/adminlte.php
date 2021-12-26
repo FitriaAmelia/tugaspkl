@@ -242,23 +242,41 @@ return [
             'text' => 'search',
         ],
 
-        ['header' => 'FITUR'],
+        ['header' => 'MENU UTAMA'],
         [
-            'text' => 'Info Penyeewaan',
-            'url' => 'admin/beranda',
-            'icon' => 'fas fa-info-circle',
-        ],
-
-        ['header' => 'account_settings'],
-        [
-            'text' => 'List Info Sewa',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'text' => 'Edit Profil Admin',
+            'url' => 'admin/edit',
+            'icon' => 'fas fa-edit',
         ],
         [
-            'text' => 'List Akun',
-            'url' => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'text' => 'Lihat Stock Mobil ',
+            'url' => 'admin/stock',
+            'icon' => 'fas fa-car',
+        ],
+        [
+            'text' => 'Update Stock Mobil',
+            'url' => 'admin/update',
+            'icon' => 'fas fa-pen',
+        ],
+        [
+            'text' => 'Penyewaan Mobil',
+            'url' => 'admin/sewa',
+            'icon' => 'fas fa-shopping-cart',
+        ],
+        [
+            'text' => 'Cek sewa Online',
+            'url' => 'admin/cek',
+            'icon' => 'fas fa-search',
+        ],
+        [
+            'text' => 'Pengembalian Mobil',
+            'url' => 'admin/kembali',
+            'icon' => 'fas fa-exchange-alt',
+        ],
+        [
+            'text' => 'Laporan Bulanan',
+            'url' => 'admin/laporan',
+            'icon' => 'fas fa-book-open',
         ],
 
     ],
