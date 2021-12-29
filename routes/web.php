@@ -48,18 +48,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
         return view('sewa.index');
     })->middleware(['role:admin|pengguna']);
 
-    Route::get('cek', function () {
-        return view('cek.index');
-    })->middleware(['role:admin']);
-
-    Route::get('edit', function () {
-        return view('edit.index');
-    })->middleware(['role:admin']);
-
-    Route::get('kembali', function () {
-        return view('kembali.index');
-    })->middleware(['role:admin']);
-
     Route::get('laporan', function () {
         return view('laporan.index');
     })->middleware(['role:admin']);

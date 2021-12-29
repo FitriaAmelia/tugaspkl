@@ -243,11 +243,7 @@ return [
         ],
 
         ['header' => 'MENU UTAMA'],
-        [
-            'text' => 'Edit Profil Admin',
-            'url' => 'admin/edit',
-            'icon' => 'fas fa-edit',
-        ],
+
         [
             'text' => 'Lihat Stock Mobil ',
             'url' => 'admin/stock',
@@ -263,16 +259,7 @@ return [
             'url' => 'admin/sewa',
             'icon' => 'fas fa-shopping-cart',
         ],
-        [
-            'text' => 'Cek sewa Online',
-            'url' => 'admin/cek',
-            'icon' => 'fas fa-search',
-        ],
-        [
-            'text' => 'Pengembalian Mobil',
-            'url' => 'admin/kembali',
-            'icon' => 'fas fa-exchange-alt',
-        ],
+
         [
             'text' => 'Laporan Bulanan',
             'url' => 'admin/laporan',
