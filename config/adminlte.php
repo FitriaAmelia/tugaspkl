@@ -245,25 +245,30 @@ return [
         ['header' => 'MENU UTAMA'],
 
         [
-            'text' => 'Lihat Stock Mobil ',
-            'url' => 'admin/stock',
+            'text' => 'Lihat Mobil ',
+            'url' => 'admin/mobil',
             'icon' => 'fas fa-car',
-        ],
-        [
-            'text' => 'Update Stock Mobil',
-            'url' => 'admin/update',
-            'icon' => 'fas fa-pen',
-        ],
-        [
-            'text' => 'Penyewaan Mobil',
-            'url' => 'admin/sewa',
-            'icon' => 'fas fa-shopping-cart',
         ],
 
         [
-            'text' => 'Laporan Bulanan',
-            'url' => 'admin/laporan',
-            'icon' => 'fas fa-book-open',
+            'text' => 'Penyewa Mobil',
+            'url' => 'admin/penyewa',
+            'icon' => 'fas fa-users',
+        ],
+        [
+            'text' => 'Sewa Mobil',
+            'url' => 'admin/sewa',
+            'icon' => 'fas fa-shopping-cart',
+        ],
+        [
+            'text' => 'Driver Mobil ',
+            'url' => 'admin/driver',
+            'icon' => 'fas fa-users',
+        ],
+        [
+            'text' => 'Transaksi',
+            'url' => 'admin/transaksi',
+            'icon' => 'fas fa-money-check-alt',
         ],
 
     ],

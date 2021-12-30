@@ -15,10 +15,10 @@ class CreateFasilitasTable extends Migration
     {
         Schema::create('fasilitas', function (Blueprint $table) {
             $table->integer('kode_fasilitas');
-            $table->foreignId('mobil_no')
-                ->constraint('mobils')
-                ->onUpdate('cascade')
-                ->onDelete('cascade');
+            $table->bigInteger('mobil_no')->unsigned();
+            $table->foreign('mobil_no')
+                ->references('id')
+                ->on('mobils');
             $table->string('nama_fasilitas');
             $table->timestamps();
         });

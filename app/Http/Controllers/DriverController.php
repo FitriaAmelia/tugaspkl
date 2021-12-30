@@ -14,7 +14,9 @@ class DriverController extends Controller
      */
     public function index()
     {
-        //
+        $driver = Driver::orderbyDesc("created_at")->paginate(10);
+        return view('admin.driver.index', compact('driver'));
+
     }
 
     /**
@@ -24,7 +26,8 @@ class DriverController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.driver.create');
+
     }
 
     /**
@@ -35,7 +38,19 @@ class DriverController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'alamat' => 'required',
+            'no_telpon' => 'required',
+
+        ]);
+        $driver = new Driver;
+        $driver->nama = $request->nama;
+        $driver->alamat = $request->alamat;
+        $driver->no_telpon = $request->no_telpon;
+        $driver->save();
+        return redirect()->route('driver.index')->with('status', 'Data Berhasil ditambah!');
+
     }
 
     /**
@@ -46,7 +61,9 @@ class DriverController extends Controller
      */
     public function show(driver $driver)
     {
-        //
+        $driver = Driver::findOrFail($id);
+        return view('admin.driver.show', compact('driver'));
+
     }
 
     /**
@@ -55,9 +72,11 @@ class DriverController extends Controller
      * @param  \App\Models\driver  $driver
      * @return \Illuminate\Http\Response
      */
-    public function edit(driver $driver)
+    public function edit($id)
     {
-        //
+        $driver = Driver::findOrFail($id);
+        return view('admin.driver.edit', compact('driver'));
+
     }
 
     /**
@@ -67,9 +86,23 @@ class DriverController extends Controller
      * @param  \App\Models\driver  $driver
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, driver $driver)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'nama' => 'required',
+            'alamat' => 'required',
+            'no_telpon' => 'required',
+
+        ]);
+        $driver = Driver::findOrFail($id);
+
+        $driver->nama = $request->nama;
+        $driver->alamat = $request->alamat;
+        $driver->no_telpon = $request->no_telpon;
+        $driver->save();
+
+        return redirect()->route('driver.index')->with('status', 'Data Berhasil ditambah!');
+
     }
 
     /**
@@ -78,8 +111,12 @@ class DriverController extends Controller
      * @param  \App\Models\driver  $driver
      * @return \Illuminate\Http\Response
      */
-    public function destroy(driver $driver)
+    public function destroy($id)
     {
-        //
+        $driver = Driver::findOrFail($id);
+        $driver->delete();
+
+        return redirect()->route('driver.index')->with('status', 'Data Berhasil dihapus!');
+
     }
 }

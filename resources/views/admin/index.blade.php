@@ -9,7 +9,7 @@ Dashboard
 @endsection
 
 @section('content')
-Update Stock Mobil
+Halaman Admin
 @endsection
 
 @section('css')

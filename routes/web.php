@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\DriverController;
+use App\Http\Controllers\PenyewaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,20 +46,11 @@ Route::group(['prefix' => 'pengguna', 'middleware' => ['auth', 'role:pengguna']]
 });
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
-    Route::get('sewa', function () {
-        return view('sewa.index');
+    Route::get('driver', function () {
+        return view('driver.index');
     })->middleware(['role:admin|pengguna']);
 
-    Route::get('laporan', function () {
-        return view('laporan.index');
-    })->middleware(['role:admin']);
-
-    Route::get('stock', function () {
-        return view('stock.index');
-    })->middleware(['role:admin']);
-
-    Route::get('update', function () {
-        return view('update.index');
-    })->middleware(['role:admin']);
-
 });
+
+Route::resource('admin/driver', DriverController::class);
+Route::resource('admin/penyewa', PenyewaController::class);

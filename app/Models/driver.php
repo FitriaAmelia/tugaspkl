@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class driver extends Model
 {
     use HasFactory;
+    protected $fillable = ['nama', 'alamat', 'no_telpon'];
 }
