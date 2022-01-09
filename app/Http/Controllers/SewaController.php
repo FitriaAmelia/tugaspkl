@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\driver;
+use App\Models\mobil;
+use App\Models\penyewa;
 use App\Models\sewa;
 use Illuminate\Http\Request;
 
@@ -14,7 +17,9 @@ class SewaController extends Controller
      */
     public function index()
     {
-        //
+        $sewa = Sewa::all();
+        return view('admin.sewa.index', compact('sewa'));
+
     }
 
     /**
@@ -24,7 +29,12 @@ class SewaController extends Controller
      */
     public function create()
     {
-        //
+        $sewa = Sewa::all();
+        $mobil = Mobil::all();
+        $driver = Driver::all();
+        $penyewa = Penyewa::all();
+        return view('admin.sewa.create', compact('sewa', 'mobil', 'driver', 'penyewa'));
+
     }
 
     /**
@@ -35,7 +45,31 @@ class SewaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'no_nota' => 'required',
+            'mobil_no' => 'required',
+            'driver_id' => 'required',
+            'penyewa_id' => 'required',
+            'tgl_sewa' => 'required',
+            'tgl_kembali' => 'required',
+            'pembayaran' => 'required',
+            'jaminan' => 'required',
+            'denda' => 'required',
+        ]);
+
+        $sewa = new Sewa;
+        $sewa->no_nota = $request->no_nota;
+        $sewa->mobil_no = $request->mobil_no;
+        $sewa->driver_id = $request->driver_id;
+        $sewa->penyewa_id = $request->penyewa_id;
+        $sewa->tgl_sewa = $request->tgl_sewa;
+        $sewa->tgl_kembali = $request->tgl_kembali;
+        $sewa->pembayaran = $request->pembayaran;
+        $sewa->jaminan = $request->jaminan;
+        $sewa->denda = $request->denda;
+        $sewa->save();
+        return redirect()->route('sewa.index');
+
     }
 
     /**
@@ -44,9 +78,11 @@ class SewaController extends Controller
      * @param  \App\Models\sewa  $sewa
      * @return \Illuminate\Http\Response
      */
-    public function show(sewa $sewa)
+    public function show($id)
     {
-        //
+        $sewa = Sewa::findOrFail($id);
+        return view('admin.sewa.show', compact('sewa'));
+
     }
 
     /**
@@ -55,9 +91,14 @@ class SewaController extends Controller
      * @param  \App\Models\sewa  $sewa
      * @return \Illuminate\Http\Response
      */
-    public function edit(sewa $sewa)
+    public function edit($id)
     {
-        //
+        $sewa = Sewa::findOrFail($id);
+        $mobil = Mobil::all();
+        $driver = Driver::all();
+        $penyewa = Penyewa::all();
+        return view('admin.sewa.edit', compact('sewa', 'mobil', 'driver', 'penyewa'));
+
     }
 
     /**
@@ -67,9 +108,33 @@ class SewaController extends Controller
      * @param  \App\Models\sewa  $sewa
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, sewa $sewa)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'no_nota' => 'required',
+            'mobil_no' => 'required',
+            'driver_id' => 'required',
+            'penyewa_id' => 'required',
+            'tgl_sewa' => 'required',
+            'tgl_kembali' => 'required',
+            'pembayaran' => 'required',
+            'jaminan' => 'required',
+            'denda' => 'required',
+        ]);
+
+        $sewa = Sewa::findOrFail($id);
+        $sewa->no_nota = $request->no_nota;
+        $sewa->mobil_no = $request->mobil_no;
+        $sewa->driver_id = $request->driver_id;
+        $sewa->penyewa_id = $request->penyewa_id;
+        $sewa->tgl_sewa = $request->tgl_sewa;
+        $sewa->tgl_kembali = $request->tgl_kembali;
+        $sewa->pembayaran = $request->pembayaran;
+        $sewa->jaminan = $request->jaminan;
+        $sewa->denda = $request->denda;
+        $sewa->save();
+        return redirect()->route('sewa.index')->with('status', 'Data Berhasil ditambah!');
+
     }
 
     /**
@@ -78,8 +143,11 @@ class SewaController extends Controller
      * @param  \App\Models\sewa  $sewa
      * @return \Illuminate\Http\Response
      */
-    public function destroy(sewa $sewa)
+    public function destroy($id)
     {
-        //
+        $sewa = Sewa::findOrFail($id);
+        $sewa->delete();
+        return redirect()->route('sewa.index')->with('status', 'Data Berhasil dihapus!');
+
     }
 }

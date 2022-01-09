@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Penyewa;
+use App\Models\penyewa;
 use Illuminate\Http\Request;
 
 class PenyewaController extends Controller

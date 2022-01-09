@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\DriverController;
+use App\Http\Controllers\MobilController;
 use App\Http\Controllers\PenyewaController;
+use App\Http\Controllers\SewaController;
+use App\Http\Controllers\TransaksiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,7 +22,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes(['register' => false]);
+Auth::routes(['register' => true]);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -54,3 +57,6 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
 
 Route::resource('admin/driver', DriverController::class);
 Route::resource('admin/penyewa', PenyewaController::class);
+Route::resource('admin/mobil', MobilController::class);
+Route::resource('admin/sewa', SewaController::class);
+Route::resource('admin/transaksi', TransaksiController::class);

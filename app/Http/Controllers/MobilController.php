@@ -14,7 +14,9 @@ class MobilController extends Controller
      */
     public function index()
     {
-        //
+        $mobil = Mobil::all();
+        return view('admin.mobil.index', compact('mobil'));
+
     }
 
     /**
@@ -24,7 +26,8 @@ class MobilController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.mobil.create');
+
     }
 
     /**
@@ -35,51 +38,121 @@ class MobilController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'no_mobil' => 'required',
+            'nama_mobil' => 'required',
+            'jenis_mobil' => 'required',
+            'tahun_pembuatan' => 'required',
+            'harga_sewa' => 'required',
+            'kapasitas_penumpang' => 'required',
+            'fasilitas_mobil' => 'required',
+            'status_mobil' => 'required',
+            'gambar' => 'required|image|max:2048',
+        ]);
+
+        $mobil = new Mobil;
+        $mobil->no_mobil = $request->no_mobil;
+        $mobil->nama_mobil = $request->nama_mobil;
+        $mobil->jenis_mobil = $request->jenis_mobil;
+        $mobil->tahun_pembuatan = $request->tahun_pembuatan;
+        $mobil->harga_sewa = $request->harga_sewa;
+        $mobil->kapasitas_penumpang = $request->kapasitas_penumpang;
+        $mobil->fasilitas_mobil = $request->fasilitas_mobil;
+        $mobil->status_mobil = $request->status_mobil;
+
+        if ($request->hasFile('gambar')) {
+            $mobil->deleteImage();
+            $image = $request->file('gambar');
+            $name = rand(1000, 9999) . $image->getClientOriginalName();
+            $image->move('images/mobil/', $name);
+            $mobil->gambar = $name;
+        }
+        $mobil->save();
+        return redirect()->route('mobil.index');
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\mobil  $mobil
+     * @param  \App\Models\Mobil  $mobil
      * @return \Illuminate\Http\Response
      */
-    public function show(mobil $mobil)
+    public function show($id)
     {
-        //
+        $mobil = Mobil::findOrFail($id);
+        return view('admin.mobil.show', compact('mobil'));
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\mobil  $mobil
+     * @param  \App\Models\Mobil  $mobil
      * @return \Illuminate\Http\Response
      */
-    public function edit(mobil $mobil)
+    public function edit($id)
     {
-        //
+        $mobil = Mobil::findOrFail($id);
+        return view('admin.mobil.edit', compact('mobil'));
+
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\mobil  $mobil
+     * @param  \App\Models\Mobil  $mobil
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, mobil $mobil)
+    public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'no_mobil' => 'required',
+            'nama_mobil' => 'required',
+            'jenis_mobil' => 'required',
+            'tahun_pembuatan' => 'required',
+            'harga_sewa' => 'required',
+            'kapasitas_penumpang' => 'required',
+            'fasilitas_mobil' => 'required',
+            'status_mobil' => 'required',
+            'gambar' => 'required|image|max:2048',
+        ]);
+
+        $mobil = Mobil::findOrFail($id);
+        $mobil->no_mobil = $request->no_mobil;
+        $mobil->nama_mobil = $request->nama_mobil;
+        $mobil->jenis_mobil = $request->jenis_mobil;
+        $mobil->tahun_pembuatan = $request->tahun_pembuatan;
+        $mobil->harga_sewa = $request->harga_sewa;
+        $mobil->kapasitas_penumpang = $request->kapasitas_penumpang;
+        $mobil->fasilitas_mobil = $request->fasilitas_mobil;
+        $mobil->status_mobil = $request->status_mobil;
+
+        if ($request->hasFile('gambar')) {
+            $mobil->deleteImage();
+            $image = $request->file('gambar');
+            $name = rand(1000, 9999) . $image->getClientOriginalName();
+            $image->move('images/mobil/', $name);
+            $mobil->gambar = $name;
+        }
+        $mobil->save();
+        return redirect()->route('mobil.index')->with('status', 'Data Berhasil ditambah!');
+
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\mobil  $mobil
+     * @param  \App\Models\Mobil  $mobil
      * @return \Illuminate\Http\Response
      */
-    public function destroy(mobil $mobil)
+    public function destroy($id)
     {
-        //
+        $mobil = Mobil::findOrFail($id);
+        $mobil->deleteImage();
+        $mobil->delete();
+        return redirect()->route('mobil.index')->with('status', 'Data Berhasil dihapus!');
+
     }
 }

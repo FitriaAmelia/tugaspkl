@@ -26,7 +26,7 @@
                             <input type="text" name="nama" class="form-control @error('nama') is-invalid @enderror" value="{{ $driver->nama }}">
                             @error('nama')
                             <span class="invalid-feedback" role="alert">
-                                <strong>{{$message}}</strong>
+                                <strong>{{$message}}</strong> 
                             </span>
                             @enderror
                         </div>

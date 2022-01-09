@@ -9,4 +9,10 @@ class driver extends Model
 {
     use HasFactory;
     protected $fillable = ['nama', 'alamat', 'no_telpon'];
+    public $timestamps = true;
+
+    public function sewas()
+    {
+        $this->hasMany('App\Models\sewa', 'driver_id');
+    }
 }
