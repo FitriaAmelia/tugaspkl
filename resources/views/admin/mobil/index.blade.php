@@ -30,11 +30,11 @@
                         <table class="table">
                             <tr>
                                 <th>No</th>
-                                <th>Nomor Mobil</th>
-                                <th>Nama Mobil</th>
+                                <th>Plat Nomor Mobil</th>
+                                <th>Merk Mobil</th>
                                 <th>Jenis Mobil</th>
-                                <th>Tahun Pembuatan</th>
-                                <th>Harga Sewa</th>
+                                <th>Tahun Pembuatan Mobil</th>
+                                <th>Harga Rental Mobil</th>
                                 <th>Kapasitas Penumpang</th>
                                 <th>Fasilitas Mobil</th>
                                 <th>Status Mobil</th>

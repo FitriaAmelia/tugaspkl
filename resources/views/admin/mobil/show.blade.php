@@ -19,11 +19,11 @@
                 <div class="card-header">Data Mobil</div>
                 <div class="card-body">
                     <div class="form-group">
-                        <label for="">No Mobil</label>
-                        <input type="text" name="o_mobil" value="{{$mobil->o_mobil}}" class="form-control" readonly>
+                        <label for="">Plat Nomor Mobil</label>
+                        <input type="text" name="no_mobil" value="{{$mobil->o_mobil}}" class="form-control" readonly>
                     </div>
                     <div class="form-group">
-                        <label for="">Nama Mobil</label>
+                        <label for=""> Merk Mobil</label>
                         <input type="text" name="nama_mobil" value="{{$mobil->nama_mobil}}" class="form-control" readonly>
                     </div>
                     <div class="form-group">
@@ -35,7 +35,7 @@
                         <input type="number" name="tahun_pembuatan" value="{{$mobil->tahun_pembuatan}}" class="form-control" readonly>
                     </div>
                     <div class="form-group">
-                        <label for="">Harga Sewa</label>
+                        <label for="">Harga Rental Mobil</label>
                         <input type="text" name="harga_sewa" value="{{$mobil->harga_sewa}}" class="form-control" readonly>
                     </div>
                     <div class="form-group">

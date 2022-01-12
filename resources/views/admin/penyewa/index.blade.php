@@ -46,6 +46,7 @@ Dashboard
                                 <th>Alamat</th>
                                 <th>Kota</th>
                                 <th>Provinsi</th>
+                                <th>Aksi</th>
 
                             </tr>
                             @php $no=1; @endphp

@@ -21,7 +21,7 @@
                    <form action="{{route('mobil.store')}}" method="post" enctype="multipart/form-data">
                         @csrf
                         <div class="form-group">
-                            <label for="">Masukan Nomor Mobil</label>
+                            <label for="">Plat Nomor Mobil</label>
                             <input type="text" name="no_mobil" class="form-control @error('no_mobil') is-invalid @enderror">
                              @error('no_mobil')
                                 <span class="invalid-feedback" role="alert">
@@ -30,7 +30,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="">Masukan Nama Mobil</label>
+                            <label for="">Merk Mobil</label>
                             <input type="text" name="nama_mobil" class="form-control @error('nama_mobil') is-invalid @enderror">
                              @error('nama_mobil')
                                 <span class="invalid-feedback" role="alert">
@@ -39,7 +39,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="">Masukan Jenis Mobil</label>
+                            <label for="">Jenis Mobil</label>
                             <input type="text" name="jenis_mobil" class="form-control @error('jenis_mobil') is-invalid @enderror">
                              @error('jenis_mobil')
                                 <span class="invalid-feedback" role="alert">
@@ -48,7 +48,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="">Masukan Tahun Pembuatan Mobil</label>
+                            <label for="">Tahun Pembuatan Mobil</label>
                             <input type="number" name="tahun_pembuatan" class="form-control @error('tahun_pembuatan') is-invalid @enderror">
                              @error('tahun_pembuatan')
                                 <span class="invalid-feedback" role="alert">
@@ -57,7 +57,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="">Masukan Harga Mobil</label>
+                            <label for="">Harga Rental Mobil</label>
                             <input type="text" name="harga_sewa" class="form-control @error('harga_sewa') is-invalid @enderror">
                              @error('harga_sewa')
                                 <span class="invalid-feedback" role="alert">
@@ -66,7 +66,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="">Masukan Kapasitas Penumpang</label>
+                            <label for="">Kapasitas Penumpang</label>
                             <input type="text" name="kapasitas_penumpang" class="form-control @error('kapasitas_penumpang') is-invalid @enderror">
                              @error('kapasitas_penumpang')
                                 <span class="invalid-feedback" role="alert">
@@ -75,7 +75,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="">Masukan Fasilitas Mobil</label>
+                            <label for="">Fasilitas Mobil</label>
                             <input type="text" name="fasilitas_mobil" class="form-control @error('fasilitas_mobil') is-invalid @enderror">
                              @error('fasilitas_mobil')
                                 <span class="invalid-feedback" role="alert">
@@ -84,7 +84,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="">Masukan Status Mobil</label>
+                            <label for="">Status Mobil</label>
                             <input type="text" name="status_mobil" class="form-control @error('status_mobil') is-invalid @enderror">
                              @error('status_mobil')
                                 <span class="invalid-feedback" role="alert">
@@ -93,7 +93,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="">Masukan Gambar Mobil</label>
+                            <label for="">Gambar Mobil</label>
                             <input type="file" name="gambar" class="form-control @error('gambar') is-invalid @enderror">
                              @error('gambar')
                                 <span class="invalid-feedback" role="alert">

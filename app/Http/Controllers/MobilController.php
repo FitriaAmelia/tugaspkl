@@ -119,7 +119,7 @@ class MobilController extends Controller
             'gambar' => 'required|image|max:2048',
         ]);
 
-        $mobil = Mobil::findOrFail($id);
+        $mobil = Mobil::FindOrFail($id);
         $mobil->no_mobil = $request->no_mobil;
         $mobil->nama_mobil = $request->nama_mobil;
         $mobil->jenis_mobil = $request->jenis_mobil;

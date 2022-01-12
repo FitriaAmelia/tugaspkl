@@ -41,6 +41,7 @@ Dashboard
                                 <th>Nama Driver</th>
                                 <th>Alamat Driver</th>
                                 <th>No Telepon</th>
+                                <th>Aksi</th>
 
                             </tr>
                             @php $no=1; @endphp
