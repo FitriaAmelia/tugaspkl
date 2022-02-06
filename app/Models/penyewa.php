@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class penyewa extends Model
 {
-    use HasFactory;
+
     use HasFactory;
     protected $fillable = ['nama_lengkap', 'password', 'email', 'jk', 'pekerjaan', 'alamat', 'kota', 'provinsi'];
     public $timestamps = true;

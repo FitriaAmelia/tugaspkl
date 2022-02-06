@@ -40,7 +40,14 @@
                         </div>
                         <div class="form-group">
                             <label for="">Jenis Mobil</label>
-                            <input type="text" name="jenis_mobil" class="form-control @error('jenis_mobil') is-invalid @enderror">
+                           <select class="form-control @error('jenis_mobil') is-invalid @enderror" name="jenis_mobil" aria-label="Default select">
+                                <option selected>Pilih Jenis Mobil</option>
+                                <option value="Mobil Keluarga">Mobil Keluarga</option>
+                                <option value="Mobil Sedang">MobilSedang</option>
+                                <option value="Mobil Mini">Mobil Mini</option>
+                                <option value="Mobil Offroad">Mobil Offroad</option>
+                                <option value="Mobil Sport">Mobil Sport</option>
+                        </select>
                              @error('jenis_mobil')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -49,7 +56,7 @@
                         </div>
                         <div class="form-group">
                             <label for="">Tahun Pembuatan Mobil</label>
-                            <input type="number" name="tahun_pembuatan" class="form-control @error('tahun_pembuatan') is-invalid @enderror">
+                            <input type="date" name="tahun_pembuatan" class="form-control @error('tahun_pembuatan') is-invalid @enderror">
                              @error('tahun_pembuatan')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -67,7 +74,7 @@
                         </div>
                         <div class="form-group">
                             <label for="">Kapasitas Penumpang</label>
-                            <input type="text" name="kapasitas_penumpang" class="form-control @error('kapasitas_penumpang') is-invalid @enderror">
+                            <input type="number" name="kapasitas_penumpang" class="form-control @error('kapasitas_penumpang') is-invalid @enderror">
                              @error('kapasitas_penumpang')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -76,7 +83,7 @@
                         </div>
                         <div class="form-group">
                             <label for="">Fasilitas Mobil</label>
-                            <input type="text" name="fasilitas_mobil" class="form-control @error('fasilitas_mobil') is-invalid @enderror">
+                            <input type="textr" name="fasilitas_mobil" class="form-control @error('fasilitas_mobil') is-invalid @enderror">
                              @error('fasilitas_mobil')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
