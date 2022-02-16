@@ -16,7 +16,11 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        $transaksi = Transaksi::all();
+        // $transaksi = Transaksi::all();
+        // return view('admin.transaksi.index', compact('transaksi'));
+
+        $transaksi = transaksi::with('mobils')->get();
+        $transaksi = transaksi::with('penyewas')->get();
         return view('admin.transaksi.index', compact('transaksi'));
 
     }
@@ -76,6 +80,8 @@ class TransaksiController extends Controller
     {
         $transaksi = Transaksi::findOrFail($id);
         return view('admin.transaksi.show', compact('transaksi'));
+        // $transaksi = Transaksi::all();
+        // return view('admin.transaksi.show', compact('transaksi'));
 
     }
 

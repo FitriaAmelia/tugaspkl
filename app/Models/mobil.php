@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Alert;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -31,10 +32,20 @@ class mobil extends Model
 
     public function sewas()
     {
-        $this->hasMany('App\Models\sewa', 'mobil_no');
+        return $this->hasMany('App\Models\sewa', 'mobil_no');
     }
     public function transaksis()
     {
         $this->hasMany('App\Models\transaksi', 'mobil_no');
+    }
+    public static function boot()
+    {
+        parent::boot();
+        self::deleting(function ($mobil) {
+            if ($mobil->sewas->count() > 0) {
+                Alert::error('Gagal Menghapus', 'Data ' . $mobil->no_mobil . ' Masih Memiliki Mobil');
+                return false;
+            }
+        });
     }
 }

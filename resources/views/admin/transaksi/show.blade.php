@@ -17,10 +17,10 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">Data Transaksi</div>
-                <div class="card-body">
+                 <div class="card-body">
                     <div class="form-group">
                         <label for="">No Mobil</label>
-                        <input type="text" name="" class="form-control" value="{{$transaksi->mobil_no}}" readonly>
+                        <input type="text" name="no_mobil" class="form-control" value="{{$transaksi->mobil_no}}" readonly>
                     </div>
                     <div class="form-group">
                         <label for="">Tanggal Sewa</label>
@@ -50,7 +50,9 @@
                         <a href="{{url('/admin/transaksi')}}" class="btn btn-block btn-outline-primary">Kembali</a>
                     </div>
                 </div>
+
             </div>
+
         </div>
     </div>
 </div>

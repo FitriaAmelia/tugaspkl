@@ -81,16 +81,28 @@
                                 </span>
                             @enderror
                         </div>
+
                         <div class="form-group">
                             <label for="">Fasilitas Mobil</label>
-                            <input type="textr" name="fasilitas_mobil" class="form-control @error('fasilitas_mobil') is-invalid @enderror">
+                            <textarea type="file" name="fasilitas_mobil" class="form-control"></textarea>
                              @error('fasilitas_mobil')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
                         </div>
-                        <div class="form-group">
+
+                       <div class="form-group">
+                            <label for="status_mobil">Status Mobil :</label> <br>
+                        <div class="form-check form-check-inline">
+                            <label for="status_mobil">
+                                <input type="radio" name="status_mobil" value="ADA" id="status_mobil">ADA
+                                <input type="radio" name="status_mobil" value="TIDAK" id="status_mobil">TIDAK
+
+                            </label>
+                            </div>
+                        </div>
+                        {{-- <div class="form-group">
                             <label for="">Status Mobil</label>
                             <input type="text" name="status_mobil" class="form-control @error('status_mobil') is-invalid @enderror">
                              @error('status_mobil')
@@ -98,7 +110,7 @@
                                     <strong>{{ $message }}</strong>
                                 </span>
                             @enderror
-                        </div>
+                        </div> --}}
                         <div class="form-group">
                             <label for="">Gambar Mobil</label>
                             <input type="file" name="gambar" class="form-control @error('gambar') is-invalid @enderror">

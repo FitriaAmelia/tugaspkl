@@ -16,8 +16,10 @@ class penyewa extends Model
     {
         $this->hasMany('App\Models\sewa', 'penyewa_id');
     }
+
     public function transaksis()
     {
         $this->hasMany('App\Models\'transaksi', 'penyewa_id');
     }
+
 }

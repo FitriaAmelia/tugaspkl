@@ -30,10 +30,10 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="">No Mobil</label>
+                            <label for="">Nama Mobil</label>
                             <select name="mobil_no" class="form-control @error('mobil_no') is-invalid @enderror" >
                                 @foreach($mobil as $data)
-                                    <option value="{{$data->id}}">{{$data->id}}</option>
+                                    <option value="{{$data->id}}">{{$data->nama_mobil}}</option>
                                 @endforeach
                             </select>
                             @error('mobil_no')
@@ -43,10 +43,10 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="">ID Driver</label>
+                            <label for="">Nama Driver</label>
                             <select name="driver_id" class="form-control @error('driver_id') is-invalid @enderror" >
                                 @foreach($driver as $data)
-                                    <option value="{{$data->id}}">{{$data->id}}</option>
+                                    <option value="{{$data->id}}">{{$data->nama}}</option>
                                 @endforeach
                             </select>
                             @error('driver_id')
@@ -56,10 +56,10 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label for="">ID Penyewa</label>
+                            <label for="">Nama Penyewa</label>
                             <select name="penyewa_id" class="form-control @error('penyewa_id') is-invalid @enderror" >
                                 @foreach($penyewa as $data)
-                                    <option value="{{$data->id}}">{{$data->id}}</option>
+                                    <option value="{{$data->id}}">{{$data->nama_lengkap}}</option>
                                 @endforeach
                             </select>
                             @error('penyewa_id')

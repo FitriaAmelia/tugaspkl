@@ -14,7 +14,7 @@ return [
     |
      */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Rental Mobil',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -236,11 +236,11 @@ return [
             'topnav_right' => true,
         ],
 
-        // Sidebar items:
-        [
-            'type' => 'sidebar-menu-search',
-            'text' => 'search',
-        ],
+        // // Sidebar items:
+        // [
+        //     'type' => 'sidebar-menu-search',
+        //     'text' => 'search',
+        // ],
 
         ['header' => 'MENU UTAMA'],
 

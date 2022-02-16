@@ -32,7 +32,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">Tahun Pembuatan Mobil</label>
-                        <input type="number" name="tahun_pembuatan" value="{{$mobil->tahun_pembuatan}}" class="form-control" readonly>
+                        <input type="date" name="tahun_pembuatan" value="{{$mobil->tahun_pembuatan}}" class="form-control" readonly>
                     </div>
                     <div class="form-group">
                         <label for="">Harga Rental Mobil</label>

@@ -4,7 +4,7 @@
 
 @section('content_header')
 
-Dashboard
+Penyewa
 
 @endsection
 @section('header')
@@ -39,13 +39,13 @@ Dashboard
                             <tr>
                                 <th>No</th>
                                 <th>Nama Lengkap</th>
-                                <th>Password</th>
+                                {{-- <th>Password</th> --}}
                                 <th>Email</th>
                                 <th>Jenis Kelamin</th>
                                 <th>Pekerjaan</th>
                                 <th>Alamat</th>
-                                <th>Kota</th>
-                                <th>Provinsi</th>
+                                {{-- <th>Kota</th>
+                                <th>Provinsi</th> --}}
                                 <th>Aksi</th>
 
                             </tr>
@@ -54,13 +54,13 @@ Dashboard
                                 <tr>
                                     <td>{{$no++}}</td>
                                     <td>{{$data->nama_lengkap}}</td>
-                                    <td>{{$data->password}}</td>
+                                    {{-- <td>{{$data->password}}</td> --}}
                                     <td>{{$data->email}}</td>
                                     <td>{{$data->jk}}</td>
                                     <td>{{$data->pekerjaan}}</td>
                                     <td>{{$data->alamat}}</td>
-                                    <td>{{$data->kota}}</td>
-                                    <td>{{$data->provinsi}}</td>
+                                    {{-- <td>{{$data->kota}}</td>
+                                    <td>{{$data->provinsi}}</td> --}}
                                     <td>
                                         <a href="{{route('penyewa.edit', $data->id)}}" class="mb-2 btn btn-outline-info">Edit</a>
                                         <form action="{{route('penyewa.destroy', $data->id)}}" method="post">

@@ -50,7 +50,7 @@
                         </div>
                         <div class="form-group">
                             <label for="">Tahun Pembuatan Mobil</label>
-                            <input type="number" name="tahun_pembuatan" value="{{$mobil->tahun_pembuatan}}" class="form-control @error('tahun_pembuatan') is-invalid @enderror">
+                            <input type="date" name="tahun_pembuatan" value="{{$mobil->tahun_pembuatan}}" class="form-control @error('tahun_pembuatan') is-invalid @enderror">
                              @error('tahun_pembuatan')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -75,6 +75,8 @@
                                 </span>
                             @enderror
                         </div>
+
+
                         <div class="form-group">
                             <label for="">Fasilitas Mobil</label>
                             <input type="text" name="fasilitas_mobil" value="{{$mobil->fasilitas_mobil}}" class="form-control @error('fasilitas_mobil') is-invalid @enderror">

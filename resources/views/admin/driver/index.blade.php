@@ -4,7 +4,9 @@
 
 @section('content_header')
 
-Dashboard
+
+
+Data Driver
 
 @endsection
 @section('header')
@@ -25,7 +27,7 @@ Dashboard
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    Data Driver
+                   Beranda Data Driver
                     <a href="{{route('driver.create')}}" class="float-right btn btn-sm btn-outline-primary">Tambah Driver</a>
                 </div>
                 <div class="card-body">

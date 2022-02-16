@@ -32,12 +32,12 @@
                         </div>
                         <div class="form-group">
                             <label for="">No Mobil</label>
-                            <select name="mobil_no" class="form-control @error('mobil_no') is-invalid @enderror" >
+                            <select name="nama_mobil" class="form-control @error('nama_mobil') is-invalid @enderror" >
                                 @foreach($mobil as $data)
-                                    <option value="{{$data->id}}" {{$data->id == $sewa->mobil_no ? 'selected="selected"' : '' }}>{{$data->id}}</option>
+                                    <option value="{{$data->id}}" {{$data->id == $sewa->nama_mobil ? 'selected="selected"' : '' }}>{{$data->nama_mobil}}</option>
                                 @endforeach
                             </select>
-                            @error('mobil_no')
+                            @error('nama_mobil')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
                                 </span>

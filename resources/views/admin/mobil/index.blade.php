@@ -1,14 +1,19 @@
 @extends('adminlte::page')
-@section('header')
-<div class="content-header">
-    <div class="container-fluid">
-        <div class="row mb-2">
-            <div class="col-sm-12">
-                <h1 class="m-0">Data Mobil</h1>
-            </div>
-        </div>
-    </div>
-</div>
+
+@section('title', 'Data Mobil')
+
+@section('content_header')
+
+Data Mobil
+
+@endsection
+
+@section('js')
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+    <script src="{{asset('js/sweetalert2.js')}}"></script>
+    <script src="{{asset('js/delete.js')}}"></script>
+</script>
 @endsection
 
 @section('content')
@@ -17,7 +22,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    Data Mobil
+                   Beranda Data Mobil
                     <a href="{{route('mobil.create')}}" class="btn btn-sm btn-outline-primary float-right">Tambah Mobil</a>
                 </div>
                 <div class="card-body">
@@ -60,7 +65,7 @@
                                         @csrf
                                         <a href="{{route('mobil.edit',$data->id)}}" class="btn btn-outline-info">Edit</a>
                                         <a href="{{route('mobil.show',$data->id)}}" class="btn btn-outline-warning">Show</a>
-                                        <button type="submit" class="btn btn-outline-danger" onclick="return confirm('Apakah anda yakin menghapus ini?');">Delete</button>
+                                        <button type="submit" class="btn btn-outline-danger delete-confirm">Delete</button>
                                     </form>
                                 </td>
                             </tr>

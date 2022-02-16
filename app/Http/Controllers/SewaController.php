@@ -17,7 +17,9 @@ class SewaController extends Controller
      */
     public function index()
     {
-        $sewa = Sewa::all();
+        $sewa = sewa::with('mobils')->get();
+        $sewa = sewa::with('drivers')->get();
+        $sewa = sewa::with('penyewas')->get();
         return view('admin.sewa.index', compact('sewa'));
 
     }

@@ -24,7 +24,7 @@
                     </div>
                     <div class="form-group">
                         <label for="">No Mobil</label>
-                        <input type="text" name="" class="form-control" value="{{$sewa->mobil_no}}" readonly>
+                        <input type="text" name="nama_mobil" class="form-control" value="{{$sewa->nama_mobil}}" readonly>
                     </div>
                     <div class="form-group">
                         <label for="">ID Driver</label>

@@ -2,13 +2,12 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class sewa extends Model
 {
-    use HasFactory;protected $fillable = ['no_nota', 'mobil_no', 'driver_id', 'penyewa_id', 'tgl_sewa', 'tgl_kembali', 'pembayaran', 'jaminan', 'denda'];
-    public $timestamps = true;
+    // use HasFactory;protected $fillable = ['no_nota', 'mobil_no', 'driver_id', 'penyewa_id', 'tgl_sewa', 'tgl_kembali', 'pembayaran', 'jaminan', 'denda'];
+    // public $timestamps = true;
 
     public function mobils()
     {

@@ -47,7 +47,18 @@
                         </span>
                         @enderror
                     </div>
+
                     <div class="form-group">
+                            <label for="jk">Jenis Kelamin :</label> <br>
+                        <div class="form-check form-check-inline">
+                            <label for="status_mobil">
+                                <input type="radio" name="jk" value="Laki-laki" id="jk">Laki-laki
+                                <input type="radio" name="jk" value="Perempuan" id="jk">Perempuan
+
+                            </label>
+                            </div>
+                        </div>
+                    {{-- <div class="form-group">
                         <label for="">Jenis Kelamin :</label>
                         <input type="text" name="jk" class="form-control @error('jk') is-invalid @enderror" value="{{ old("jk") }}">
                         @error('jk')
@@ -55,7 +66,7 @@
                             <strong>{{$message}}</strong>
                         </span>
                         @enderror
-                    </div>
+                    </div> --}}
                     <div class="form-group">
                         <label for="">Pekerjaan :</label>
                         <input type="text" name="pekerjaan" class="form-control @error('pekerjaan') is-invalid @enderror" value="{{ old("pekerjaan") }}">
@@ -64,7 +75,17 @@
                             <strong>{{$message}}</strong>
                         </span>
                         @enderror
-                    </div>
+
+                         <div class="form-group">
+                            <label for="">Alamat :</label>
+                            <textarea type="file" name="alamat" class="form-control"></textarea>
+                             @error('alamat')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
+                    {{-- </div>
                     <div class="form-group">
                         <label for="">Alamat :</label>
                         <input type="text" name="alamat" class="form-control @error('alamat') is-invalid @enderror" value="{{ old("alamat") }}">
@@ -73,7 +94,7 @@
                             <strong>{{$message}}</strong>
                         </span>
                         @enderror
-                    </div>
+                    </div> --}}
 
                     <div class="form-group">
                         <label for="">Kota :</label>
